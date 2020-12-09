@@ -1,0 +1,17 @@
+{
+  "name": "js-mock",
+  "version": "1.0.0",
+  "description": "Javascript Mock lesson",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Juan Correa (https://developero.io/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.12.9",
+    "@babel/preset-env": "7.12.7",
+    "babel-jest": "26.6.3",
+    "jest": "26.6.3"
+  }
+}
