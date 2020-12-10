@@ -1,5 +1,6 @@
 import { getRandomNumberFact } from "./";
 import { getRandomNumberFactService } from "./service";
+import { fakeResponse } from "./__fixture__";
 
 jest.mock("./service");
 
@@ -8,16 +9,11 @@ beforeEach(() => {
 });
 
 test("getRandomNumberFact", async () => {
-  getRandomNumberFactService.mockReturnValueOnce({
-    text:
-      "652 is the year that Khazaria becomes an independent state (approximate date).",
-  });
+  getRandomNumberFactService.mockReturnValueOnce(fakeResponse);
 
   const result = await getRandomNumberFact();
   expect(getRandomNumberFactService).toHaveBeenCalledTimes(1);
-  expect(result.text).toBe(
-    "652 is the year that Khazaria becomes an independent state (approximate date)."
-  );
+  expect(result.text).toBe(fakeResponse.text);
 });
 
 test("getRandomNumberFact error", async () => {
